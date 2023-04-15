@@ -21,33 +21,35 @@ class _MainTabBarState extends State<MainTabBar> {
         index: _currentIndex,
         children: TabBarConstraint.screens,
       ),
-      bottomNavigationBar: SizedBox(
-        height: 120,
-        child: Column(children: [
-          SizedBox(
-            height: 1,
-            child: Container(
-              decoration:
-                  const BoxDecoration(color: ColorConstraint.primaryColor),
+      bottomNavigationBar: SafeArea(
+        child: SizedBox(
+          height: 79,
+          child: Column(children: [
+            SizedBox(
+              height: 1,
+              child: Container(
+                decoration:
+                    const BoxDecoration(color: ColorConstraint.primaryColor),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          BottomNavigationBar(
-            selectedItemColor: ColorConstraint.primaryColor,
-            unselectedItemColor: ColorConstraint.secondaryColor,
-            backgroundColor: Colors.transparent,
-            elevation: 0,
-            items: TabBarConstraint.items,
-            selectedLabelStyle: TextStyleConstraint.remark,
-            unselectedLabelStyle: TextStyleConstraint.remark,
-            currentIndex: _currentIndex,
-            onTap: (index) => setState(() {
-              _currentIndex = index;
-            }),
-          ),
-        ]),
+            const SizedBox(
+              height: 8,
+            ),
+            BottomNavigationBar(
+              selectedItemColor: ColorConstraint.primaryColor,
+              unselectedItemColor: ColorConstraint.secondaryColor,
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              items: TabBarConstraint.items,
+              selectedLabelStyle: TextStyleConstraint.remark,
+              unselectedLabelStyle: TextStyleConstraint.remark,
+              currentIndex: _currentIndex,
+              onTap: (index) => setState(() {
+                _currentIndex = index;
+              }),
+            ),
+          ]),
+        ),
       ),
     );
   }
