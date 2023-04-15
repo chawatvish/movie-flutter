@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constraint/color.dart';
+import 'package:movie_app/constraint/textstyle.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -14,10 +15,11 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(color: ColorConstraint.backgroundColor),
-        child: const Center(
+        child: Center(
           child: Text(
             "Home",
-            style: TextStyle(fontSize: 25, color: ColorConstraint.primaryColor),
+            style: TextStyleConstraint.body
+                .copyWith(color: ColorConstraint.primaryColor, fontSize: 25),
           ),
         ),
       ),

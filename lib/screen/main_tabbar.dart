@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constraint/color.dart';
 import 'package:movie_app/constraint/tabbar_items.dart';
+import 'package:movie_app/constraint/textstyle.dart';
 
 class MainTabBar extends StatefulWidget {
   const MainTabBar({Key? key}) : super(key: key);
@@ -26,7 +27,8 @@ class _MainTabBarState extends State<MainTabBar> {
           SizedBox(
             height: 1,
             child: Container(
-              decoration: BoxDecoration(color: ColorConstraint.primaryColor),
+              decoration:
+                  const BoxDecoration(color: ColorConstraint.primaryColor),
             ),
           ),
           const SizedBox(
@@ -38,9 +40,8 @@ class _MainTabBarState extends State<MainTabBar> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             items: TabBarConstraint.items,
-            selectedFontSize: 11,
-            unselectedFontSize: 11,
-            selectedLabelStyle: null,
+            selectedLabelStyle: TextStyleConstraint.remark,
+            unselectedLabelStyle: TextStyleConstraint.remark,
             currentIndex: _currentIndex,
             onTap: (index) => setState(() {
               _currentIndex = index;
